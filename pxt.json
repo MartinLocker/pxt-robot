@@ -1,5 +1,5 @@
 {
-    "name": "Robot",
+    "name": "Robot extension",
     "description": "",
     "dependencies": {
         "core": "*",
