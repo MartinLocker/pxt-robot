@@ -5,7 +5,7 @@
         "core": "*",
         "radio": "*",
         "microphone": "*",
-        "neopixel": "githb:elecfreaks/pxt-neopixel"
+        "neopixel": "github:elecfreaks/pxt-neopixel"
     },
     "files": [
         "main.blocks",
