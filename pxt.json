@@ -4,7 +4,8 @@
     "dependencies": {
         "core": "*",
         "radio": "*",
-        "microphone": "*"
+        "microphone": "*",
+        "neopixel": "githb:elecfreaks/pxt-neopixel"
     },
     "files": [
         "main.blocks",
