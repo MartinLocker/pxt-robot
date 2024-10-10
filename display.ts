@@ -1,4 +1,4 @@
-//% color=#ff7f24  icon="\uf108" block="Display" blockId="Display"
+//% block="Display" blockId="Display" color=#ff7f24  icon="\uf108"
 
 namespace Display {
     let font: Buffer;
