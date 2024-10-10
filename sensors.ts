@@ -1,4 +1,4 @@
-//% color=#0fbc11 icon="\uf140" block="Sensors" blockId="Sensors"
+//% block="Sensors" blockId="Sensors" color=#0fbc11 icon="\uf140" 
 namespace Sensors {
         
     export enum Distance_Unit {
