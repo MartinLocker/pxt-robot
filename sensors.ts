@@ -1,17 +1,17 @@
-enum Distance_Unit {
-    //% block="mm" enumval=0
-    Distance_Unit_mm,
-
-    //% block="cm" enumval=1
-    Distance_Unit_cm,
-
-    //% block="inch" enumval=2
-    Distance_Unit_inch,
-}
-
 //% weight=100 color=#000000 icon="\uf043" block="Sensors"
 namespace Sensors {
         
+    export enum Distance_Unit {
+        //% block="mm" enumval=0
+        Distance_Unit_mm,
+    
+        //% block="cm" enumval=1
+        Distance_Unit_cm,
+    
+        //% block="inch" enumval=2
+        Distance_Unit_inch,
+    }
+    
     /**
     * get Ultrasonic distance            
     */
