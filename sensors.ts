@@ -11,11 +11,9 @@ enum Distance_Unit {
 
 //% weight=100 color=#000000 icon="\uf043" block="Sensors"
 namespace Sensors {
-
-
-
+        
     /**
-    * get Ultrasonic distance
+    * get Ultrasonic distance            
     */
     //% blockId=sonarbit block="Ultrasonic distance in unit %distance_unit |at|pin %pin"
     //% weight=10
