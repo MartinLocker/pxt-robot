@@ -145,10 +145,6 @@ namespace Sensors {
         return _tcs3472.setIntegrationTime(time)
     }
 
-    /**
-     * Use this file to define custom functions and blocks.
-     * Read more at https://makecode.microbit.org/blocks/custom
-     */
     enum Distance_Unit {
         //% block="mm" enumval=0
         Distance_Unit_mm,
@@ -168,8 +164,6 @@ namespace Sensors {
     //% subcategory="Sonar"
     export function sonarbit_distance(distance_unit: Distance_Unit, pin: DigitalPin): number {
 
-        let old = 0
-        let now = 0
         // send pulse
         pins.setPull(pin, PinPullMode.PullNone)
         pins.digitalWritePin(pin, 0)
