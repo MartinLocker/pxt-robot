@@ -3,7 +3,7 @@ const board_address = 0x10
 /**
 * Functions to WuKong multifunctional expansion board by ELECFREAKS Co.,Ltd.
 */
-//% color=#000000  icon="\uf0c2" block="Drive" blockId="Drive" 
+//% color=#000000  icon="\uf013" block="Drive" blockId="Drive" 
 namespace Drive {
 
     /**
