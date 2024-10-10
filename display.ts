@@ -170,19 +170,6 @@ namespace Display {
         }
     }
 
-    //% block="draw rectangle from:|x: $x0 y: $y0 to| x: $x1 y: $y1"
-    //% x0.defl=0
-    //% y0.defl=0
-    //% x1.defl=20
-    //% y1.defl=20
-    //% weight=0
-    //% subcategory="Oled"
-    export function drawRectangle(x0: number, y0: number, x1: number, y1: number) {
-        drawLine(x0, y0, x1, y0)
-        drawLine(x0, y1, x1, y1)
-        drawLine(x0, y0, x0, y1)
-        drawLine(x1, y0, x1, y1)
-    }
     //% block="initialize OLED with width $width height $height"
     //% width.defl=128
     //% height.defl=64
