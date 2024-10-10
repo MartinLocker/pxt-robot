@@ -57,6 +57,7 @@ namespace Drive {
     //% weight=88
     //% blockId=setMotorSpeed block="Set motor %motor speed to %speed"
     //% speed.min=-100 speed.max=100
+    //% subcategory="Motors"    
     export function setMotorSpeed(motor: MotorList, speed: number): void {
         let buf = pins.createBuffer(4);
         switch (motor) {
@@ -95,6 +96,7 @@ namespace Drive {
     //% blockId=setAllMotor block="Set motor M1 speed %m1speed M2 speed %m2speed"
     //% m1speed.min=-100 m1speed.max=100
     //% m2speed.min=-100 m2speed.max=100
+    //% subcategory="Motors"
     export function setAllMotor(m1speed: number, m2speed: number): void {
         setMotorSpeed(MotorList.M1, m1speed)
         setMotorSpeed(MotorList.M2, m2speed)
@@ -106,6 +108,7 @@ namespace Drive {
      */
     //% weight=86
     //% blockId=stopMotor block="Stop motor %motor"
+    //% subcategory="Motors"
     export function stopMotor(motor: MotorList): void {
         setMotorSpeed(motor, 0)
     }
@@ -114,6 +117,7 @@ namespace Drive {
      */
     //% weight=85
     //% blockId=stopAllMotor  block="Stop all motors"
+    //% subcategory="Motors"
     export function stopAllMotor(): void {
         setMotorSpeed(MotorList.M1, 0)
         setMotorSpeed(MotorList.M2, 0)
@@ -127,6 +131,7 @@ namespace Drive {
     //% weight=84
     //% blockId=setServoAngle block="Set %servoType servo %servo angle to %angle"
     //% angle.min=0 angle.max=360
+    //% subcategory="Servos"
     export function setServoAngle(servoType: ServoTypeList, servo: ServoList, angle: number): void {
         let buf = pins.createBuffer(4);
         if (servo == 0) {
@@ -174,75 +179,4 @@ namespace Drive {
 }
 
 
-/**
-* Functions to WuKong multifunctional expansion board by ELECFREAKS Co.,Ltd.
-*/
-//% color=#ff7f24  icon="\uf0c2" block="Leds" blockId="Leds" 
-namespace Leds {
-    /**
-    * LightMode
-    */
-    export enum LightMode {
-        //% block="BREATH"
-        BREATH,
-        //% block="OFF"
-        OFF
-    }
-
-    /**
-     * TODO: Set the on-board LED display mode. 
-     * @param mode breath or off , eg: LightMode.BREATH
-     */
-    //% weight=90
-    //% blockId="setLightMode" block="Set light mode to %mode"
-    export function setLightMode(mode: LightMode): void {
-        let buff = pins.createBuffer(4);
-        switch (mode) {
-            case LightMode.BREATH:
-                buff[0] = 0x11;
-                buff[1] = 0x00;
-                buff[2] = 0;
-                buff[3] = 0;
-                pins.i2cWriteBuffer(board_address, buff);
-                buff[0] = 0x12;
-                buff[1] = 150;
-                basic.pause(100);
-                pins.i2cWriteBuffer(board_address, buff);
-                break;
-            case LightMode.OFF:
-                buff[0] = 0x12;
-                buff[1] = 0;
-                buff[2] = 0;
-                buff[3] = 0;
-                pins.i2cWriteBuffer(board_address, buff);
-                buff[0] = 0x11;
-                buff[1] = 160;
-                basic.pause(100);
-                pins.i2cWriteBuffer(board_address, buff);
-                break;
-            default:
-                break;
-        }
-    }
-
-    /**
-    * TODO: Set the brightness of on-board LED lamp.
-    * @param light brightness, eg: 100
-    */
-    //% weight=89
-    //% blockId=lightIntensity block="Set light intensity to %light"
-    //% light.min=0 light.max=100
-    export function lightIntensity(light: number): void {
-        let buff = pins.createBuffer(4);
-        buff[0] = 0x12;
-        buff[1] = light;
-        buff[2] = 0;
-        buff[3] = 0;
-        pins.i2cWriteBuffer(board_address, buff);
-        basic.pause(100);
-        buff[0] = 0x11;
-        buff[1] = 160;
-        pins.i2cWriteBuffer(board_address, buff);
-    }
-}
 
