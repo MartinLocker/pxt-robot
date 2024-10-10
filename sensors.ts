@@ -1,4 +1,4 @@
-//% weight=100 color=#000000 icon="\uf043" block="Sensors"
+//% weight=100 color=#000000 icon="\uf043" block="Sensors" blockId="Sensors"
 namespace Sensors {
         
     export enum Distance_Unit {
