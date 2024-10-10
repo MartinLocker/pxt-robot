@@ -191,7 +191,7 @@ namespace Sensors {
      */
     //% blockId=envirobit_set_integration_time
     //% block="Set colour integration time %time ms"
-    //% time.min=0 time.max=612 value.defl=500
+    //% time.min=0 time.max=612 time.defl=500
     //% subcategory="Color"
     export function setColourIntegrationTime(time: number): void {
         return _tcs3472.setIntegrationTime(time)
