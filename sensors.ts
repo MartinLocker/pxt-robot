@@ -34,7 +34,7 @@ namespace Sensors {
         let distance = d / 58
 
         if (distance > 400) {
-            distance = 0
+            distance = 10000
         }
 
         switch (distance_unit) {
